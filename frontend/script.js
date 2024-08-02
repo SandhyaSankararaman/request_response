@@ -8,7 +8,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
       errorDiv.classList.add('hidden');
       filterContainer.classList.remove('hidden');
       
-      const response = await fetch('http://localhost:3000/bfhl', { // Update with your backend URL
+      const response = await fetch('https://responserequest-697eabf98a88.herokuapp.com/bfhl', { // Update with your backend URL
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
