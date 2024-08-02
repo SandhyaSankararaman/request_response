@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA2111003020073</title> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>BFHL API</h1>
+    <div id="form-container">
+        <h2>Input JSON and Submit</h2>
+        <textarea id="jsonInput" placeholder='Enter JSON here, e.g., {"data":["A","C","z"]}'></textarea>
+        <button id="submitBtn">Submit</button>
+        <div id="error" class="hidden"></div>
+    </div>
+
+    <div id="filter-container" class="hidden">
+        <h2>Select Filters</h2>
+        <select id="filterSelect" multiple>
+            <option value="alphabets">Alphabets</option>
+            <option value="numbers">Numbers</option>
+            <option value="highest_alphabet">Highest Alphabet</option>
+        </select>
+    </div>
+
+    <div id="response-container">
+        <h2>Response</h2>
+        <pre id="responseOutput"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
