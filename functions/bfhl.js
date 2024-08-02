@@ -1,13 +1,7 @@
-const express = require('express');
 const bodyParser = require('body-parser');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.use(bodyParser.json());
-
-app.post('/bfhl', (req, res) => {
-    const data = req.body.data || [];
+exports.handler = async function(event, context) {
+    const data = JSON.parse(event.body).data || [];
     const user_id = "SandhyaSankararaman_01042003";
     const email = "ss9403@srmist.edu.in";
     const roll_number = "RA2111003020073";
@@ -26,16 +20,8 @@ app.post('/bfhl', (req, res) => {
         highest_alphabet: highest_alphabet
     };
 
-    res.json(response);
-});
-
-app.get('/bfhl', (req, res) => {
-    const response = {
-        operation_code: 1
+    return {
+        statusCode: 200,
+        body: JSON.stringify(response)
     };
-    res.json(response);
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+};
